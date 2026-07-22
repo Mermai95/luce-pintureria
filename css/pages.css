@@ -60,9 +60,18 @@
   border-radius: var(--radius);
   padding: 1.4rem 1.2rem;
   text-align: center;
-  transition: border-color .15s ease;
+  /* incluye opacity acá (no solo en .reveal): esta regla se carga después
+     y pisaría el transition de .reveal si no la repetimos */
+  transition: opacity 500ms var(--ease-out), transform 220ms var(--ease-out), border-color 220ms var(--ease-out), box-shadow 220ms var(--ease-out);
 }
-.showcase-card:hover{ border-color: var(--ink); }
+@media (hover: hover) and (pointer: fine){
+  .showcase-card:hover{
+    border-color: var(--ink);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+  }
+}
+.showcase-card:active{ transform: scale(0.98); }
 .showcase-card .dot{
   width: 46px; height: 46px;
   border-radius: 50%;
@@ -98,14 +107,23 @@
 
 /* ---------- LIGHTBOX de galería de producto ---------- */
 .lightbox{
-  display: none;
+  display: flex;
   position: fixed;
   inset: 0;
   z-index: 300;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 150ms var(--ease-out), visibility 0s linear 150ms;
 }
-.lightbox.open{ display: flex; }
+.lightbox.open{
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 220ms var(--ease-out), visibility 0s linear 0s;
+}
 .lightbox [hidden]{ display: none !important; }
 .lightbox-backdrop{
   position: absolute;
@@ -120,6 +138,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: scale(0.96);
+  transition: transform 150ms var(--ease-out);
+}
+.lightbox.open .lightbox-content{
+  transform: scale(1);
+  transition: transform 220ms var(--ease-out);
 }
 .lightbox-image{
   display: block;
@@ -128,7 +152,10 @@
   width: auto;
   border-radius: var(--radius);
   background: var(--white);
+  opacity: 1;
+  transition: opacity 150ms var(--ease-out);
 }
+.lightbox-image.is-swapping{ opacity: 0; }
 .lightbox-close,
 .lightbox-prev,
 .lightbox-next{
@@ -141,16 +168,20 @@
   align-items: center;
   justify-content: center;
   padding: 0;
+  transition: background 160ms var(--ease-out), color 160ms var(--ease-out), transform 160ms var(--ease-out);
 }
-.lightbox-close:hover,
-.lightbox-prev:hover,
-.lightbox-next:hover{ background: var(--white); color: var(--ink); }
+@media (hover: hover) and (pointer: fine){
+  .lightbox-close:hover,
+  .lightbox-prev:hover,
+  .lightbox-next:hover{ background: var(--white); color: var(--ink); }
+}
 .lightbox-close{
   position: absolute;
   top: -44px; right: 0;
   width: 38px; height: 38px;
   font-size: 1rem;
 }
+.lightbox-close:active{ transform: scale(0.92); }
 .lightbox-prev,
 .lightbox-next{
   position: absolute;
@@ -159,6 +190,8 @@
   width: 44px; height: 44px;
   font-size: 1.4rem;
 }
+.lightbox-prev:active{ transform: translateY(-50%) scale(0.92); }
+.lightbox-next:active{ transform: translateY(-50%) scale(0.92); }
 .lightbox-prev{ left: -22px; }
 .lightbox-next{ right: -22px; }
 .lightbox-dots{
@@ -176,7 +209,9 @@
   background: rgba(255,255,255,0.4);
   cursor: pointer;
   padding: 0;
+  transition: background 160ms var(--ease-out), transform 160ms var(--ease-out);
 }
+.lightbox-dot:active{ transform: scale(0.85); }
 .lightbox-dot.active{ background: var(--white); }
 
 /* ---------- CONTACTO ---------- */

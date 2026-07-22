@@ -69,8 +69,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function show(index) {
       current = (index + images.length) % images.length;
-      lbImage.src = images[current].src;
-      lbImage.alt = images[current].alt;
+      const target = images[current];
+      if (lbImage.src) {
+        lbImage.classList.add('is-swapping');
+        window.setTimeout(() => {
+          lbImage.src = target.src;
+          lbImage.alt = target.alt;
+          lbImage.classList.remove('is-swapping');
+        }, 150);
+      } else {
+        lbImage.src = target.src;
+        lbImage.alt = target.alt;
+      }
       renderDots();
     }
 
@@ -91,8 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
       lightbox.classList.remove('open');
       lightbox.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
-      lbImage.src = '';
       if (lastFocused) lastFocused.focus();
+      window.setTimeout(() => { lbImage.src = ''; }, 150);
     }
 
     document.querySelectorAll('[data-gallery]').forEach(trigger => {
@@ -116,6 +126,27 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.key === 'ArrowLeft') show(current - 1);
       if (e.key === 'ArrowRight') show(current + 1);
     });
+  }
+
+  // ---- reveal progresivo de secciones al hacer scroll ----
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in window && !prefersReducedMotion) {
+    const revealSections = document.querySelectorAll('.about, .showcase-card, .cat-banner, .contact-split');
+    const cards = document.querySelectorAll('.showcase-card');
+
+    revealSections.forEach(el => el.classList.add('reveal'));
+    cards.forEach((el, i) => { el.style.transitionDelay = `${Math.min(i, 8) * 60}ms`; });
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+
+    revealSections.forEach(el => revealObserver.observe(el));
   }
 
   // ---- validación básica del formulario de contacto ----
