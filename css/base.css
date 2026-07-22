@@ -22,8 +22,8 @@
   --border: #E9E9E9;
 
   /* tipografía */
-  --font-display: 'Anton', sans-serif;
-  --font-body: 'Work Sans', sans-serif;
+  --font-display: 'Montserrat', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
 
   /* layout */
   --max-width: 1180px;
@@ -50,6 +50,7 @@ body{
 
 h1, h2, h3{
   font-family: var(--font-display);
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.01em;
   line-height: 1;
