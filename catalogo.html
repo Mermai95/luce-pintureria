@@ -50,7 +50,7 @@
   <div class="body">
     <h2 class="accent-terracota">Enduido</h2>
     <p>Enduido interior/exterior para preparar y alisar la superficie antes de pintar. Descripción placeholder — reemplazar por texto y productos reales.</p>
-    <a href="contacto.html" class="btn btn--outline">Ver más</a>
+    <button type="button" class="btn btn--outline" data-gallery='["assets/productos/enduido.png"]' data-gallery-name="Enduido">Ver fotos</button>
   </div>
   <img class="product-shot" src="assets/productos/enduido.png" alt="Enduido LUCE">
 </section>
@@ -60,7 +60,7 @@
   <div class="body">
     <h2 class="accent-azul">Fijador Sellador</h2>
     <p>Fijador sellador concentrado para uniformar la absorción de la superficie antes de pintar. Descripción placeholder — reemplazar por texto y productos reales.</p>
-    <a href="contacto.html" class="btn btn--outline">Ver más</a>
+    <button type="button" class="btn btn--outline" data-gallery='["assets/productos/fijador-sellador.png"]' data-gallery-name="Fijador Sellador">Ver fotos</button>
   </div>
   <img class="product-shot" src="assets/productos/fijador-sellador.png" alt="Fijador Sellador LUCE">
 </section>
@@ -70,7 +70,7 @@
   <div class="body">
     <h2 class="accent-verde">Látex Interior</h2>
     <p>Terminación mate, alta cubrición y secado rápido para paredes interiores. Descripción placeholder — reemplazar por texto y productos reales.</p>
-    <a href="contacto.html" class="btn btn--outline">Ver más</a>
+    <button type="button" class="btn btn--outline" data-gallery='["assets/productos/latex-interior.png"]' data-gallery-name="Látex Interior">Ver fotos</button>
   </div>
   <img class="product-shot" src="assets/productos/latex-interior.png" alt="Látex Interior LUCE">
 </section>
@@ -80,7 +80,7 @@
   <div class="body">
     <h2 class="accent-rojo">Látex Exterior</h2>
     <p>Resistente a la intemperie y a los rayos UV, para frentes y fachadas. Descripción placeholder — reemplazar por texto y productos reales.</p>
-    <a href="contacto.html" class="btn btn--outline">Ver más</a>
+    <button type="button" class="btn btn--outline" data-gallery='["assets/productos/latex-exterior.png","assets/productos/latex-exterior-lifestyle.png"]' data-gallery-name="Látex Exterior">Ver fotos</button>
   </div>
   <img class="product-shot" src="assets/productos/latex-exterior.png" alt="Látex Exterior LUCE">
 </section>
@@ -90,7 +90,7 @@
   <div class="body">
     <h2 class="accent-cian">Membrana Líquida</h2>
     <p>Impermeabilizante para techos y terrazas frente a filtraciones. Descripción placeholder — reemplazar por texto y productos reales.</p>
-    <a href="contacto.html" class="btn btn--outline">Ver más</a>
+    <button type="button" class="btn btn--outline" data-gallery='["assets/productos/membrana-liquida.png","assets/productos/membrana-liquida-lifestyle.png","assets/productos/membrana-liquida-lata.png"]' data-gallery-name="Membrana Líquida">Ver fotos</button>
   </div>
   <img class="product-shot" src="assets/productos/membrana-liquida.png" alt="Membrana Líquida LUCE">
 </section>
@@ -100,7 +100,7 @@
   <div class="body">
     <h2 class="accent-violeta">Esmalte Sintético</h2>
     <p>Ideal para madera y metal, con brillo total y alta resistencia. Descripción placeholder — reemplazar por texto y productos reales.</p>
-    <a href="contacto.html" class="btn btn--outline">Ver más</a>
+    <button type="button" class="btn btn--outline" data-gallery='["assets/productos/esmalte-sintetico.png"]' data-gallery-name="Esmalte Sintético">Ver fotos</button>
   </div>
   <img class="product-shot" src="assets/productos/esmalte-sintetico.png" alt="Esmalte Sintético LUCE">
 </section>
@@ -116,6 +116,17 @@
 </footer>
 
 <a class="whatsapp-float" href="https://wa.me/34000000000" target="_blank" aria-label="Escribinos por WhatsApp">☎</a>
+
+<div class="lightbox" aria-hidden="true">
+  <div class="lightbox-backdrop" data-lightbox-close></div>
+  <div class="lightbox-content" role="dialog" aria-modal="true" aria-label="Galería de producto">
+    <button type="button" class="lightbox-close" data-lightbox-close aria-label="Cerrar">✕</button>
+    <button type="button" class="lightbox-prev" aria-label="Foto anterior">‹</button>
+    <img class="lightbox-image" src="" alt="">
+    <button type="button" class="lightbox-next" aria-label="Foto siguiente">›</button>
+    <div class="lightbox-dots"></div>
+  </div>
+</div>
 
 <script src="js/main.js"></script>
 </body>

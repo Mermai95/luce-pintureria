@@ -42,6 +42,82 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(s => observer.observe(s));
   }
 
+  // ---- lightbox de galería de producto (catálogo) ----
+  const lightbox = document.querySelector('.lightbox');
+  if (lightbox) {
+    const lbImage = lightbox.querySelector('.lightbox-image');
+    const lbPrev = lightbox.querySelector('.lightbox-prev');
+    const lbNext = lightbox.querySelector('.lightbox-next');
+    const lbDots = lightbox.querySelector('.lightbox-dots');
+    let images = [];
+    let current = 0;
+    let lastFocused = null;
+
+    function renderDots() {
+      lbDots.innerHTML = '';
+      if (images.length < 2) return;
+      images.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'lightbox-dot';
+        dot.setAttribute('aria-label', `Ver foto ${i + 1}`);
+        if (i === current) dot.classList.add('active');
+        dot.addEventListener('click', () => show(i));
+        lbDots.appendChild(dot);
+      });
+    }
+
+    function show(index) {
+      current = (index + images.length) % images.length;
+      lbImage.src = images[current].src;
+      lbImage.alt = images[current].alt;
+      renderDots();
+    }
+
+    function openLightbox(imgs) {
+      images = imgs;
+      const multi = images.length > 1;
+      lbPrev.hidden = !multi;
+      lbNext.hidden = !multi;
+      show(0);
+      lastFocused = document.activeElement;
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      lightbox.querySelector('.lightbox-close').focus();
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      lbImage.src = '';
+      if (lastFocused) lastFocused.focus();
+    }
+
+    document.querySelectorAll('[data-gallery]').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        let paths = [];
+        try { paths = JSON.parse(trigger.getAttribute('data-gallery')); } catch (e) { paths = []; }
+        if (!paths.length) return;
+        const name = trigger.getAttribute('data-gallery-name') || '';
+        const imgs = paths.map((src, i) => ({ src, alt: paths.length > 1 ? `${name} — foto ${i + 1}` : name }));
+        openLightbox(imgs);
+      });
+    });
+
+    lightbox.querySelectorAll('[data-lightbox-close]').forEach(el => el.addEventListener('click', closeLightbox));
+    lbPrev.addEventListener('click', () => show(current - 1));
+    lbNext.addEventListener('click', () => show(current + 1));
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') show(current - 1);
+      if (e.key === 'ArrowRight') show(current + 1);
+    });
+  }
+
   // ---- validación básica del formulario de contacto ----
   const form = document.querySelector('.contact-form form');
   if (form) {
