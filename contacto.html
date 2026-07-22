@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto — LUCE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-main">
+    <a href="index.html" class="logo">LUCE</a>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li class="dropdown-wrap">
+          <a href="catalogo.html">Productos ▾</a>
+          <div class="dropdown">
+            <a href="catalogo.html#enduido">Enduido</a>
+            <a href="catalogo.html#fijador-sellador">Fijador Sellador</a>
+            <a href="catalogo.html#latex-interior">Látex Interior</a>
+            <a href="catalogo.html#latex-exterior">Látex Exterior</a>
+            <a href="catalogo.html#membrana-liquida">Membrana Líquida</a>
+            <a href="catalogo.html#esmalte-sintetico">Esmalte Sintético</a>
+          </div>
+        </li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+    <button class="burger" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<section class="contact-split">
+  <div class="contact-headline">
+    <h1>Hablemos<br>de color</h1>
+  </div>
+  <div class="contact-form">
+    <form novalidate>
+      <div class="field">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <span class="error">Ingresá tu nombre.</span>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <span class="error">Ingresá un email válido.</span>
+      </div>
+      <div class="field">
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" name="telefono">
+        <span class="error">Revisá el teléfono.</span>
+      </div>
+      <div class="field">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+        <span class="error">Contanos qué necesitás.</span>
+      </div>
+      <button type="submit" class="btn">Enviar mensaje</button>
+      <p class="form-status"></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="socials">
+      <a href="#" aria-label="Instagram">IG</a>
+      <a href="#" aria-label="Facebook">FB</a>
+    </div>
+    <small>© 2026 LUCE Pinturería. Todos los derechos reservados.</small>
+  </div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/34000000000" target="_blank" aria-label="Escribinos por WhatsApp">☎</a>
+
+<script src="js/main.js"></script>
+</body>
+</html>

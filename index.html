@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUCE — Pinturería</title>
+<meta name="description" content="LUCE, pinturería. Látex, esmaltes, impermeabilizantes y accesorios.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-main">
+    <a href="index.html" class="logo">
+      <!-- reemplazar por <img src="assets/logo/logo.png" alt="LUCE"> cuando esté el logo real -->
+      LUCE
+    </a>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li class="dropdown-wrap">
+          <a href="catalogo.html">Productos ▾</a>
+          <div class="dropdown">
+            <a href="catalogo.html#enduido">Enduido</a>
+            <a href="catalogo.html#fijador-sellador">Fijador Sellador</a>
+            <a href="catalogo.html#latex-interior">Látex Interior</a>
+            <a href="catalogo.html#latex-exterior">Látex Exterior</a>
+            <a href="catalogo.html#membrana-liquida">Membrana Líquida</a>
+            <a href="catalogo.html#esmalte-sintetico">Esmalte Sintético</a>
+          </div>
+        </li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+    <button class="burger" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  </div>
+  <div class="pill-bar">
+    <a class="pill p-terracota" href="catalogo.html#enduido">Enduido</a>
+    <a class="pill p-azul" href="catalogo.html#fijador-sellador">Fijador Sellador</a>
+    <a class="pill p-verde" href="catalogo.html#latex-interior">Látex Interior</a>
+    <a class="pill p-rojo" href="catalogo.html#latex-exterior">Látex Exterior</a>
+    <a class="pill p-cian" href="catalogo.html#membrana-liquida">Membrana Líquida</a>
+    <a class="pill p-violeta" href="catalogo.html#esmalte-sintetico">Esmalte Sintético</a>
+  </div>
+</header>
+
+<section class="hero">
+  <!-- <img class="hero-logo" src="assets/logo/logo.png" alt="LUCE"> -->
+  <h1>Una mano<br>para pintar</h1>
+  <p>Pintura, esmaltes y accesorios para cada pared, cada clima y cada proyecto.</p>
+  <a href="catalogo.html" class="btn">Conocé los productos</a>
+</section>
+
+<section class="about">
+  <div>
+    <h2>Conocenos</h2>
+    <p>LUCE es una pinturería con años eligiendo, mezclando y recomendando color. Asesoramos antes, durante y después de la compra para que el resultado dure.</p>
+    <p>Texto institucional placeholder — reemplazar por la bajada real de marca cuando la tengamos.</p>
+  </div>
+  <ul class="contact-list">
+    <li><span class="ico">✉</span> hola@luce-pinturas.com</li>
+    <li><span class="ico">☎</span> +34 000 000 000</li>
+    <li><span class="ico">⌖</span> Dirección a confirmar</li>
+  </ul>
+</section>
+
+<section class="showcase">
+  <h2>Productos LUCE</h2>
+  <div class="showcase-grid">
+    <a class="showcase-card" href="catalogo.html#enduido">
+      <div class="dot bg-terracota"></div>
+      <h3>Enduido</h3>
+      <span>Interior y exterior</span>
+    </a>
+    <a class="showcase-card" href="catalogo.html#fijador-sellador">
+      <div class="dot bg-azul"></div>
+      <h3>Fijador Sellador</h3>
+      <span>Concentrado</span>
+    </a>
+    <a class="showcase-card" href="catalogo.html#latex-interior">
+      <div class="dot bg-verde"></div>
+      <h3>Látex Interior</h3>
+      <span>Mate, alta cubrición</span>
+    </a>
+    <a class="showcase-card" href="catalogo.html#latex-exterior">
+      <div class="dot bg-rojo"></div>
+      <h3>Látex Exterior</h3>
+      <span>Resistente a intemperie</span>
+    </a>
+    <a class="showcase-card" href="catalogo.html#membrana-liquida">
+      <div class="dot bg-cian"></div>
+      <h3>Membrana Líquida</h3>
+      <span>Impermeabilizante</span>
+    </a>
+    <a class="showcase-card" href="catalogo.html#esmalte-sintetico">
+      <div class="dot bg-violeta"></div>
+      <h3>Esmalte Sintético</h3>
+      <span>Madera y metal</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="socials">
+      <a href="#" aria-label="Instagram">IG</a>
+      <a href="#" aria-label="Facebook">FB</a>
+    </div>
+    <small>© 2026 LUCE Pinturería. Todos los derechos reservados.</small>
+  </div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/34000000000" target="_blank" aria-label="Escribinos por WhatsApp">☎</a>
+
+<script src="js/main.js"></script>
+</body>
+</html>

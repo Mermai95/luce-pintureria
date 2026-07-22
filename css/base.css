@@ -1,0 +1,114 @@
+/* ==========================================================
+   LUCE — base.css
+   Reset, variables de marca y tipografía.
+   Fondo blanco siempre: el color vive en acentos (pastillas,
+   botones, bordes, íconos), nunca en bloques de fondo.
+   ========================================================== */
+
+:root{
+  /* color de marca — SOLO como acento, nunca como fondo de sección */
+  --rojo:      #E8432A;
+  --azul:      #1D4E9B;
+  --amarillo:  #F2B705;
+  --verde:     #4C7A3B;
+  --terracota: #B5522D;
+  --cian:      #1B8A8A;
+  --violeta:   #6B3FA0;
+
+  /* base neutra */
+  --ink:    #17181A;
+  --muted:  #6B6B6B;
+  --white:  #FFFFFF;
+  --border: #E9E9E9;
+
+  /* tipografía */
+  --font-display: 'Anton', sans-serif;
+  --font-body: 'Work Sans', sans-serif;
+
+  /* layout */
+  --max-width: 1180px;
+  --radius: 8px;
+}
+
+*, *::before, *::after{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  margin: 0;
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3{
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  margin: 0 0 0.6em;
+}
+
+p{ margin: 0 0 1em; color: var(--muted); }
+
+a{ color: inherit; text-decoration: none; }
+
+img{ max-width: 100%; display: block; }
+
+button, input, textarea{ font-family: var(--font-body); font-size: 1rem; }
+
+.container{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 6vw;
+}
+
+.btn{
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 999px;
+  border: 2px solid var(--ink);
+  background: var(--ink);
+  color: var(--white);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: transform .15s ease, background .15s ease, color .15s ease;
+}
+.btn:hover{ transform: translateY(-2px); }
+.btn--outline{
+  background: transparent;
+  color: var(--ink);
+}
+.btn--outline:hover{ background: var(--ink); color: var(--white); }
+
+/* variantes de color por categoría — usar como clases utilitarias */
+.accent-rojo      { color: var(--rojo); }
+.accent-azul       { color: var(--azul); }
+.accent-amarillo  { color: var(--amarillo); }
+.accent-verde      { color: var(--verde); }
+.accent-terracota { color: var(--terracota); }
+.accent-cian       { color: var(--cian); }
+.accent-violeta    { color: var(--violeta); }
+
+.bg-rojo      { background: var(--rojo); }
+.bg-azul       { background: var(--azul); }
+.bg-amarillo  { background: var(--amarillo); }
+.bg-verde      { background: var(--verde); }
+.bg-terracota { background: var(--terracota); }
+.bg-cian       { background: var(--cian); }
+.bg-violeta    { background: var(--violeta); }
+
+:focus-visible{
+  outline: 3px solid var(--azul);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation: none !important; transition: none !important; }
+}
