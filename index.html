@@ -45,6 +45,7 @@
             <a href="catalogo.html#masilla-placa-yeso">Masilla Placa Yeso</a>
           </div>
         </li>
+        <li><a href="#quiero-vender">Quiero Vender</a></li>
         <li><a href="contacto.html">Contacto</a></li>
       </ul>
     </nav>
@@ -139,6 +140,64 @@
       <span>Juntas y terminación</span>
     </a>
   </div>
+</section>
+
+<section class="vender" id="quiero-vender">
+  <div class="vender-intro">
+    <h2>Quiero Vender</h2>
+    <p>Invitamos a pinturerías, ferreterías y corralones de todo el país a sumarse como puntos de venta de LUCE. Dejanos tus datos y te contactamos.</p>
+  </div>
+
+  <form class="vender-form" novalidate>
+    <fieldset class="form-radio-group">
+      <legend>Tipo de comercio</legend>
+      <label class="form-radio"><input type="radio" name="tipo-comercio" value="Pinturería" required> Pinturería</label>
+      <label class="form-radio"><input type="radio" name="tipo-comercio" value="Ferretería"> Ferretería</label>
+      <label class="form-radio"><input type="radio" name="tipo-comercio" value="Corralón"> Corralón</label>
+      <label class="form-radio"><input type="radio" name="tipo-comercio" value="Otro"> Otro</label>
+      <span class="error">Elegí un tipo de comercio.</span>
+    </fieldset>
+
+    <div class="form-grid">
+      <div class="field">
+        <label for="v-nombre">Nombre y apellido</label>
+        <input type="text" id="v-nombre" name="nombre" required>
+        <span class="error">Ingresá tu nombre.</span>
+      </div>
+      <div class="field">
+        <label for="v-empresa">Empresa o comercio</label>
+        <input type="text" id="v-empresa" name="empresa" required>
+        <span class="error">Ingresá el nombre del comercio.</span>
+      </div>
+      <div class="field">
+        <label for="v-pais">País</label>
+        <input type="text" id="v-pais" name="pais" required>
+        <span class="error">Ingresá tu país.</span>
+      </div>
+      <div class="field">
+        <label for="v-email">Email</label>
+        <input type="email" id="v-email" name="email" required>
+        <span class="error">Ingresá un email válido.</span>
+      </div>
+      <div class="field">
+        <label for="v-telefono">Teléfono</label>
+        <input type="tel" id="v-telefono" name="telefono" required>
+        <span class="error">Ingresá tu teléfono.</span>
+      </div>
+      <div class="field">
+        <label for="v-provincia">Provincia</label>
+        <input type="text" id="v-provincia" name="provincia" required>
+        <span class="error">Ingresá tu provincia.</span>
+      </div>
+      <div class="field field--full">
+        <label for="v-mensaje">Mensaje</label>
+        <textarea id="v-mensaje" name="mensaje" rows="4"></textarea>
+      </div>
+    </div>
+
+    <button type="submit" class="btn">Enviar</button>
+    <p class="form-status"></p>
+  </form>
 </section>
 
 <footer>
