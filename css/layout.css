@@ -3,6 +3,13 @@
    Header sticky + nav + barra de pastillas + footer.
    ========================================================== */
 
+/* franja de marca — todos los acentos de color, arriba del header */
+.brand-stripe{
+  display: flex;
+  height: 5px;
+}
+.brand-stripe span{ flex: 1 1 0; }
+
 header{
   position: sticky;
   top: 0;

@@ -15,6 +15,7 @@
   --cian:      #1B8A8A;
   --violeta:   #6B3FA0;
   --rosa:      #D6336C;
+  --agua:      #32ACA0;
 
   /* base neutra */
   --ink:    #17181A;
@@ -105,6 +106,7 @@ button, input, textarea{ font-family: var(--font-body); font-size: 1rem; }
 .accent-cian       { color: var(--cian); }
 .accent-violeta    { color: var(--violeta); }
 .accent-rosa       { color: var(--rosa); }
+.accent-agua       { color: var(--agua); }
 
 .bg-rojo      { background: var(--rojo); }
 .bg-azul       { background: var(--azul); }
@@ -114,6 +116,7 @@ button, input, textarea{ font-family: var(--font-body); font-size: 1rem; }
 .bg-cian       { background: var(--cian); }
 .bg-violeta    { background: var(--violeta); }
 .bg-rosa       { background: var(--rosa); }
+.bg-agua       { background: var(--agua); }
 
 :focus-visible{
   outline: 3px solid var(--azul);

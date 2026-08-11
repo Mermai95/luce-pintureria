@@ -6,22 +6,46 @@
 
 /* ---------- HOME: hero ---------- */
 .hero{
-  padding: 6rem 6vw 5rem;
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 560px;
 }
-.hero img.hero-logo{
-  max-height: 90px;
-  margin: 0 auto 1.6rem;
+.hero-art{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5rem;
 }
-.hero h1{
+.hero-illustration{
+  width: 100%;
+  max-width: 420px;
+  border-radius: var(--radius);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.16);
+}
+.hero-copy{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 6vw;
+}
+.hero-copy h1{
   font-size: clamp(2.2rem, 5vw, 3.4rem);
   color: var(--ink);
   margin-bottom: 1.4rem;
 }
-.hero p{
-  max-width: 480px;
-  margin: 0 auto 2rem;
+.hero-copy p{
+  max-width: 440px;
+  margin: 0 0 2rem;
   font-size: 1.05rem;
+}
+.hero-copy .btn{ align-self: flex-start; }
+
+@media (max-width: 900px){
+  .hero{ grid-template-columns: 1fr; min-height: auto; }
+  .hero-art{ padding: 2.4rem 10vw 2rem; }
+  .hero-copy{ padding: 2rem 6vw 3.2rem; text-align: center; }
+  .hero-copy p{ margin: 0 auto 2rem; }
+  .hero-copy .btn{ align-self: center; }
 }
 
 /* ---------- HOME: institucional ---------- */
