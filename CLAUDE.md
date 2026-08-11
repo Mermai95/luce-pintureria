@@ -31,8 +31,9 @@ assets/productos/  → fotos reales de productos (se van a ir cargando acá)
 4. **Látex Exterior** — rojo (`--rojo`)
 5. **Membrana Líquida** — cian (`--cian`)
 6. **Esmalte Sintético** — violeta (`--violeta`)
+7. **Masilla Placa Yeso** — rosa (`--rosa`), distinto de Enduido (es masilla para juntas de placas de yeso/durlock, no enduido de pared)
 
-Slugs usados en anchors/ids: `enduido`, `fijador-sellador`, `latex-interior`, `latex-exterior`, `membrana-liquida`, `esmalte-sintetico`. Ya están reflejados en el dropdown, la pill-bar y los banners de `catalogo.html`.
+Slugs usados en anchors/ids: `enduido`, `fijador-sellador`, `latex-interior`, `latex-exterior`, `membrana-liquida`, `esmalte-sintetico`, `masilla-placa-yeso`. Ya están reflejados en el dropdown, la pill-bar y los banners de `catalogo.html`.
 
 ## Fotos de producto
 Hay backups locales organizados por carpeta: `enduido/`, `fijador/`, `latex/`, `ventana liquida/` (= Membrana Líquida), `sintetico/`. Al pasarlas, copiarlas a `assets/productos/<categoría>/` respetando esa organización y reemplazar los comentarios `<!-- <img class="product-shot" ...> -->` en `catalogo.html` por las imágenes reales.

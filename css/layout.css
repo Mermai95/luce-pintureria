@@ -104,6 +104,7 @@ header{
 .pill.p-terracota { background: var(--terracota); color: var(--white); }
 .pill.p-cian       { background: var(--cian);       color: var(--white); }
 .pill.p-violeta    { background: var(--violeta);    color: var(--white); }
+.pill.p-rosa       { background: var(--rosa);       color: var(--white); }
 
 .pill.active{ box-shadow: 0 0 0 2px var(--ink); }
 
