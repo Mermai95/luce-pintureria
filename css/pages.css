@@ -14,13 +14,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3.5rem;
+  padding: 2rem;
 }
 .hero-illustration{
   width: 100%;
-  max-width: 420px;
-  border-radius: var(--radius);
-  box-shadow: 0 24px 48px rgba(0,0,0,0.16);
+  max-width: 520px;
 }
 .hero-copy{
   display: flex;
